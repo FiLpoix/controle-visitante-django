@@ -20,7 +20,7 @@ class VisitanteForm(forms.ModelForm):
                 },
             'numero_casa':{
                 'required': 'Por favor, informe o numero da casa a ser visitada'
-            }          
+            }       
         }
 
 class AutorizaVisitanteForm(forms.ModelForm):

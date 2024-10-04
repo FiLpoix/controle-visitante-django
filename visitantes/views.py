@@ -1,7 +1,8 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
-from  django.contrib.auth.decorators import login_required
-from visitantes.forms import VisitanteForm
+from django.contrib.auth.decorators import login_required
+from visitantes.forms import AutorizaVisitanteForm, VisitanteForm
+from visitantes.models import Visitante
 
 @login_required
 def registrar_visitante(request):
@@ -27,10 +28,18 @@ def registrar_visitante(request):
     return render(request,'registrar_visitante.html',context)
 
 @login_required
-def informacoes_visitante(request):
-    
+def informacoes_visitante(request, pk):
+    visitante = get_object_or_404(Visitante, pk=pk)
+
+    form = AutorizaVisitanteForm
+    if request.method == 'POST':
+        form = AutorizaVisitanteForm(request.POST, instace=visitante)
+        if form.is_valid():
+            visitante = form.save()
+
     context ={
         'nome_pagina': 'Informações Visitante',
-    }
-    
+        'visitante': visitante
+        }
+
     return render(request,'informacoes_visitante.html',context)
