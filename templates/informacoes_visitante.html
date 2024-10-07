@@ -154,7 +154,7 @@
                 <div class="modal-body">
                     <h5 class="mb-3">Realmente deseja encerrar a visita?</h5>
                 </div>
-                <form method="post" action="">
+                <form method="post" action="{% url 'finalizar_visita' pk=visitante.id %}">
                     {% csrf_token %}
                     <input hidden>
             </div>
