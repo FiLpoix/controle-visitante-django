@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 ]
 INSTALLED_APPS += [
     'widget_tweaks',
+    'rest_framework',
 ]
 
 INSTALLED_APPS += [
