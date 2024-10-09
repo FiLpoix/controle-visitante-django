@@ -10,5 +10,4 @@ router.register(r'visitantes', VisitanteViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-
 ]
