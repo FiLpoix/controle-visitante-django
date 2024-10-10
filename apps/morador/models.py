@@ -5,7 +5,7 @@ from django.db import models
 class Morador(models.Model):
     nome_completo = models.CharField(verbose_name='Nome completo do morador', max_length=200)
     contato = models.CharField(verbose_name='Contato do morador ', max_length=11)
-    apartamento = models.CharField(verbose_name='Apartamento do morador', max_length=10)
+    # morador_apartamento = models.ForeignKey('apartamento.Apartamento', verbose_name='Apartamento do morador', max_length=10, on_delete=models.PROTECT)
 
     class Meta:
         verbose_name = "Morador"
