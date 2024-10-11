@@ -30,10 +30,11 @@
                     </thead>
 
                     <tbody>
-                        {%for morador in todos_moradores %}
+                        {%for morador in moradores %}
                         <tr>
                             <td>{{ morador }}</td>
-                            <!-- <td>{{ morador.cpf }}</td> -->
+                            <td>{{ morador.contato }}</td>
+                            <td>{{ morador.get_cpf }}</td>
                             <td>
                                 <a href="#">
                                     Ver informações

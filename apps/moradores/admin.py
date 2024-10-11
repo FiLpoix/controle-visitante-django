@@ -1,5 +1,5 @@
 from django.contrib import admin
-from morador.models import Morador
+from moradores.models import Morador
 
 
 # Register your models here.

@@ -5,7 +5,7 @@ from django.db import models
 class Apartamento(models.Model):
     numero_apartamento = models.CharField(verbose_name='Numero do apartamento', max_length=5)
     bloco_apartamento = models.CharField(verbose_name='Bloco do apartamento', max_length=3)
-    vagas_estacionamento = models.CharField(verbose_name='Quantidade de vagas no estacionamento', max_length=4)
+    vagas_estacionamento = models.IntegerField(verbose_name='Quantidade de vagas no estacionamento',default=1)
 
     class Meta:
         verbose_name= 'Apartamento'
